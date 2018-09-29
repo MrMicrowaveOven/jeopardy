@@ -1,0 +1,15 @@
+= form_for @round do |f|
+  - if @round.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@round.errors.count, "error")} prohibited this round from being saved:"
+      ul
+        - @round.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :game
+    = f.text_field :game
+  .actions = f.submit
