@@ -1,12 +1,31 @@
 p#notice = notice
 
 p
-  strong Title:
+  strong> Title:
   = @game.title
 p
-  strong Author:
+  strong> Author:
   = @game.author
 
-= link_to 'Edit', edit_game_path(@game)
-'  |
 = link_to 'Back', games_path
+
+h1 Rounds
+
+table
+  thead
+    tr
+      th Title
+      th
+      th
+      th
+
+  tbody
+    - @game.rounds.each do |round|
+      tr
+        td = round.title
+        td = link_to 'Play', game_round_path(@game, round)
+        td = link_to 'Edit', edit_game_round_path(@game, round)
+        td = link_to 'Destroy', game_round_path(@game, round), data: {confirm: 'Are you sure?'}, method: :delete
+
+br
+= link_to 'New Round', new_game_round_path(game_id: @game.id)

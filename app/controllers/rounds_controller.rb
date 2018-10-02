@@ -1,10 +1,11 @@
 class RoundsController < ApplicationController
-  before_action :set_round, only: [:show, :edit, :update, :destroy]
+  before_action :set_round, only: [:show, :edit, :update]
 
   # GET /rounds
   # GET /rounds.json
   def index
-    @rounds = Round.all
+    @game = Game.find(params["game_id"])
+    @rounds = @game.rounds
   end
 
   # GET /rounds/1
@@ -14,7 +15,8 @@ class RoundsController < ApplicationController
 
   # GET /rounds/new
   def new
-    @round = Round.new
+    @game = Game.find(params["game_id"])
+    @round = @game.rounds.build
   end
 
   # GET /rounds/1/edit
@@ -24,12 +26,13 @@ class RoundsController < ApplicationController
   # POST /rounds
   # POST /rounds.json
   def create
-    @round = Round.new(round_params)
+    @game = Game.find(params["game_id"])
+    @round = @game.rounds.new(round_params)
 
     respond_to do |format|
       if @round.save
-        format.html { redirect_to @round, notice: 'Round was successfully created.' }
-        format.json { render :show, status: :created, location: @round }
+        format.html { redirect_to @game, notice: 'Round was successfully created.' }
+        format.json { render :show, status: :created, location: @game }
       else
         format.html { render :new }
         format.json { render json: @round.errors, status: :unprocessable_entity }
@@ -54,9 +57,11 @@ class RoundsController < ApplicationController
   # DELETE /rounds/1
   # DELETE /rounds/1.json
   def destroy
+    @round = Round.find(params["id"])
+    @game = @round.game
     @round.destroy
     respond_to do |format|
-      format.html { redirect_to rounds_url, notice: 'Round was successfully destroyed.' }
+      format.html { redirect_to game_url(@game.id), notice: 'Round was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
