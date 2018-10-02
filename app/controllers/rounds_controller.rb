@@ -1,13 +1,6 @@
 class RoundsController < ApplicationController
   before_action :set_round, only: [:show, :edit, :update]
 
-  # GET /rounds
-  # GET /rounds.json
-  def index
-    @game = Game.find(params["game_id"])
-    @rounds = @game.rounds
-  end
-
   # GET /rounds/1
   # GET /rounds/1.json
   def show
