@@ -4,7 +4,7 @@ class RoundsController < ApplicationController
   # GET /rounds/1.json
   def show
     round = Round.find(params["id"])
-    @round_props = { name: "Stranger" }
+    @round_props = { questions: round.questions.all }
   end
 
   # GET /rounds/new
