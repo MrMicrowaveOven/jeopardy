@@ -1,9 +1,9 @@
 class RoundsController < ApplicationController
   before_action :set_round, only: [:show, :edit, :update]
-
   # GET /rounds/1
   # GET /rounds/1.json
   def show
+    @hello_world_props = { name: "Stranger" }
   end
 
   # GET /rounds/new
