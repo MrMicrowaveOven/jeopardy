@@ -3,7 +3,8 @@ class RoundsController < ApplicationController
   # GET /rounds/1
   # GET /rounds/1.json
   def show
-    @hello_world_props = { name: "Stranger" }
+    round = Round.find(params["id"])
+    @round_props = { name: "Stranger" }
   end
 
   # GET /rounds/new
