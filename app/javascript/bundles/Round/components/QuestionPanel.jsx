@@ -19,8 +19,14 @@ export default class QuestionPanel extends React.Component {
     }
 
     render() {
+        const {question} = this.state;
+        const xCoord = question.x_coord;
+        const yCoord = question.y_coord;
+        const coordClassNamesX = ["xOne", "xTwo", "xThree", "xFour", "xFive"]
+        const coordClassNamesY = ["yOne", "yTwo", "yThree", "yFour", "yFive"]
+        const coordClass = coordClassNamesX[xCoord] + " " + coordClassNamesY[yCoord]
         return (
-            <h3>
+            <h3 className={coordClass}>
                 ${this.state.question.value}
             </h3>
         );

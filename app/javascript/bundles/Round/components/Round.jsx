@@ -23,9 +23,6 @@ export default class Round extends React.Component {
           {this.state.questions.map(question => (
             <QuestionPanel question={question}/>
           ))}
-        <h3>
-          Hello!
-        </h3>
       </div>
     );
   }
