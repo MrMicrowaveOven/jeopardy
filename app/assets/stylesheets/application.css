@@ -16,6 +16,14 @@
 
 .question-display {
     position: absolute;
+    text-align: center;
+    width: 15%;
+    height: 20%;
+    border: solid black 1px;
+}
+
+.price-display {
+    margin-top: 36%;
 }
 
 .xOne {
@@ -43,22 +51,22 @@
 }
 
 .yOne {
-    top: 10%;
+    top: 5%;
 }
 
 .yTwo {
-    top: 30%;
+    top: 25%;
 }
 
 .yThree {
-    top: 50%;
+    top: 45%;
 }
 
 .yFour {
-    top: 70%;
+    top: 65%;
 }
 
 .yFive {
-    top: 90%;
+    top: 85%;
 }
 
