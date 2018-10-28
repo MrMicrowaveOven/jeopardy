@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+
+.question-display {
+    position: absolute;
+}
+
+.xOne {
+    left: 10%;
+}
+
+.xTwo {
+    left: 25%;
+}
+
+.xThree {
+    left: 40%;
+}
+
+.xFour {
+    left: 55%;
+}
+
+.xFive {
+    left: 70%;
+}
+
+.xSix {
+    left: 85%;
+}
+
+.yOne {
+    top: 10%;
+}
+
+.yTwo {
+    top: 30%;
+}
+
+.yThree {
+    top: 50%;
+}
+
+.yFour {
+    top: 70%;
+}
+
+.yFive {
+    top: 90%;
+}
+
